@@ -21,6 +21,10 @@ app.use(
 app.use("/user", authRouter);
 app.use("/chat", chatRouter);
 
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
 const startServer = async () => {
   try {
     await Promise.all([connectToDb(), rediClient.connect()]);
