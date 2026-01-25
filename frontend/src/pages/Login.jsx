@@ -43,7 +43,6 @@ function Login() {
     try {
       await dispatch(loginUser(data)).unwrap();
       toast.success("Login successful", { id: toastId });
-
       navigate("/");
     } catch (err) {
       console.log("err", err);

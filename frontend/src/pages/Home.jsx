@@ -47,8 +47,9 @@ function Home() {
             isSidebarOpen ? "hidden-visible" : ""
           }  w-full border-b border-gray-800 bg-transparent left-0 flex  justify-between p-1.5 px-4`}
         >
-          <div className="flex gap-1"
-          onClick={() => setIsSidebarOpen((prev) => !prev)}
+          <div
+            className="flex gap-1"
+            onClick={() => setIsSidebarOpen((prev) => !prev)}
           >
             <div
               className={`flex items-center gap-1.5 text-[18px] font-bold ${
@@ -56,30 +57,25 @@ function Home() {
               } text-gray-200 py-1`}
             >
               <img src={logo} alt="DeepSeek Logo" className="h-7 rounded-lg" />
-             TechAI
+              TechAI
             </div>
-            <button
-              
-              className="cursor-pointer rounded-xl active:scale-95  p-1.5"
-            >
+            <button className="cursor-pointer rounded-xl active:scale-95  p-1.5">
               {isSidebarOpen ? (
                 <PanelTopOpen className="w-6 h-6 rotate-90" />
               ) : (
                 <PanelTopOpen className="w-6 h-6 -rotate-90" />
               )}
             </button>
-             
-           
           </div>
-            <button
-              className="cursor-pointer flex items-center gap-1.5 active:scale-95 text-sm rounded-xl px-2"
-              onClick={() => {
-                navigate("/");
-              }}
-            >
-              <SquarePen className="w-6 h-6" />
-              New Chat
-            </button>
+          <button
+            className="cursor-pointer flex items-center gap-1.5 active:scale-95 text-sm rounded-xl px-2"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            <SquarePen className="w-6 h-6" />
+            New Chat
+          </button>
         </div>
 
         {/* Message area */}
@@ -87,7 +83,6 @@ function Home() {
           <Promt />
         </div>
       </div>
-
     </div>
   );
 }

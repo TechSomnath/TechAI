@@ -229,7 +229,7 @@ function Promt() {
                 <Paperclip className="w-5 h-5" />
               </button>
               <button
-              onClick={handleSendPrompt}
+                onClick={handleSendPrompt}
                 disabled={loading || input.trim().length === 0}
                 className={`p-2 rounded-full text-white transition 
                 ${
