@@ -11,9 +11,9 @@ const authMiddleware = async (req, res, next) => {
     }
 
     const payload = jwt.verify(token, process.env.JWT_KEY);
-    const { id } = payload;
+    const { _id } = payload;
 
-    if (!id){
+    if (!_id){
       return res
         .status(401)
         .json({ error: "Unauthorized: Invalid token" });
@@ -26,7 +26,7 @@ const authMiddleware = async (req, res, next) => {
         .json({ error: "Unauthorized: Token has been revoked" });
     }
 
-    const user = await User.findById(id).select("-password");
+    const user = await User.findById(_id).select("-password");
     if (!user) {
       return res.status(401).json({ error: "Unauthorized: User not found" });
     }
